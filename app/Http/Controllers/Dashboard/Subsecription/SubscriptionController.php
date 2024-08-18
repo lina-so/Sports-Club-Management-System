@@ -23,7 +23,6 @@ class SubscriptionController extends Controller
 
     }
 
-
     /**
      * Store a newly created resource in storage.
      */

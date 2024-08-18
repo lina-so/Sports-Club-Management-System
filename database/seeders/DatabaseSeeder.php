@@ -7,6 +7,7 @@ use App\Models\User;
 use Database\Seeders\DaySeeder;
 use Illuminate\Database\Seeder;
 use Database\Seeders\ClubSeeder;
+use Database\Seeders\CategorySeeder;
 use Database\Seeders\Blog\BlogSeeder;
 use Database\Seeders\FacilitiesSeeder;
 
@@ -18,9 +19,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            FacilitiesSeeder::class,
-            DaySeeder::class,
-            ClubSeeder::class,
+            // FacilitiesSeeder::class,
+            // DaySeeder::class,
+            // ClubSeeder::class,
+            CategorySeeder::class,
 
         ]);
 
