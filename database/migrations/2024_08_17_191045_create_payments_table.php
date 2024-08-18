@@ -19,8 +19,9 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignIdFor(Subscription::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->decimal('price', 8, 2);
-            $table->date('date_of_pay');
-            $table->string('payment_method');
+            $table->date('date_of_pay')->nullable();
+            $table->string('payment_method')->nullable();
+
             $table->timestamps();
         });
     }

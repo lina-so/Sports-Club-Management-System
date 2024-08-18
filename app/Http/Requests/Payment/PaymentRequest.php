@@ -27,6 +27,8 @@ class PaymentRequest extends FormRequest
             'price' => 'required|numeric|min:0.01|max:999999.99',
             'date_of_pay' => 'required|date',
             'payment_method' => 'required|string|max:255',
+            'status' => 'in:paid,unpaid',
+
         ];
     }
 
@@ -46,7 +48,7 @@ class PaymentRequest extends FormRequest
 
             'date_of_pay.required' => 'The date of payment is required.',
             'date_of_pay.date' => 'The date of payment must be a valid date.',
-            
+
             'payment_method.required' => 'The payment method is required.',
             'payment_method.string' => 'The payment method must be a string.',
             'payment_method.max' => 'The payment method may not be greater than 255 characters.',

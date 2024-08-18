@@ -29,7 +29,7 @@ class SubsecriptionRequest extends FormRequest
             'price' => 'numeric|min:0.01|max:999999.99',
             'discount' => 'nullable|numeric|min:0.00|max:999999.99',
             'start_date' => 'required|date',
-            'end_date' => 'date',
+            'end_date' => 'date|after:today',
             'status' => 'in:pending,active,inactive,suspended,accepted,rejected',
             'suspension_reason' => 'nullable|string',
             'rejection_reason' => 'nullable|string',
