@@ -15,23 +15,16 @@ use App\Http\Controllers\Dashboard\Subsecription\SubscriptionController;
 // })->middleware('auth:sanctum');
 
 
-Route::apiResource('dashboard/sports',SportController::class);
-Route::apiResource('dashboard/rooms',RoomController::class);
-Route::apiResource('dashboard/facilities',FacilityController::class);
-Route::apiResource('dashboard/offers',OfferController::class);
-Route::apiResource('dashboard/subscription',SubscriptionController::class);
-
-
-// Route::middleware('auth:sanctum')->group(function () {
-    Route::post('dashboard/subscriptions/{subscription}/accept', [SubscriptionController::class, 'accept'])->name('subscriptions.accept');
-    Route::post('dashboard/subscriptions/{subscription}/reject', [SubscriptionController::class, 'reject'])->name('subscriptions.reject');
-    Route::post('dashboard/subscriptions/{subscription}/renew', [SubscriptionController::class, 'renew_the_subscription'])->name('subscriptions.renew');
-    Route::post('dashboard/subscriptions/{subscription}/suspend', [SubscriptionController::class, 'suspend'])->name('subscriptions.suspend');
-    Route::post('dashboard/payment/{subscription_id}/paid', [PaymentController::class, 'update'])->name('subscriptions.paid');
-
-// });
+Route::post('dashboard/payment/{subscription_id}/paid', [PaymentController::class, 'update'])->name('subscriptions.paid');
 
 Route::get('articles/tag/{tagName}', [ArticleController::class, 'searchByTag'])->name('articles.searchByTag');
 
 
 
+$api_path = '/Api';
+
+include __DIR__ . "{$api_path}/sports/sport.php";
+include __DIR__ . "{$api_path}/rooms/room.php";
+include __DIR__ . "{$api_path}/facilities/facility.php";
+include __DIR__ . "{$api_path}/offers/offer.php";
+include __DIR__ . "{$api_path}/subscription/subscription.php";

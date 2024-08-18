@@ -14,7 +14,7 @@ class Role extends Model
 
     public const Is_Admin = 1;
     public const Is_Coach = 2;
-    public const Is_Player = 4;
+    public const Is_Player = 3;
 
 
     public function permissions()
