@@ -7,9 +7,11 @@ use App\Models\User;
 use Database\Seeders\DaySeeder;
 use Illuminate\Database\Seeder;
 use Database\Seeders\ClubSeeder;
+use Database\Seeders\RoleSeeder;
 use Database\Seeders\CategorySeeder;
 use Database\Seeders\Blog\BlogSeeder;
 use Database\Seeders\FacilitiesSeeder;
+use Database\Seeders\PermissionSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,7 +24,9 @@ class DatabaseSeeder extends Seeder
             // FacilitiesSeeder::class,
             // DaySeeder::class,
             // ClubSeeder::class,
-            CategorySeeder::class,
+            // CategorySeeder::class,
+            RoleSeeder::class,
+            PermissionSeeder::class,
 
         ]);
 
